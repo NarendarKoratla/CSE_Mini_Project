@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Form - Modernized</title>
+    <!-- Use Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <h1 class="main-title">🖥️ FACULTY FEEDBACK FORM</h1>
+
+        <!-- Login Page -->
+        <div class="glass-container" id="loginPage">
+            <h2>Login to your Account</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="loginUsername"><span class="symbol">👤</span> Username</label>
+                    <input type="text" id="loginUsername" required placeholder="Enter username">
+                </div>
+                
+                <div class="input-group">
+                    <label for="loginPassword"><span class="symbol">🔒</span> Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter password">
+                </div>
+
+                <p id="loginError" class="error-msg">Username or Password doesn't match</p>
+                
+                <button type="submit" class="btn primary-btn">Login</button>
+                <div class="link-container">
+                    <span>New here?</span> <a href="#" id="registerLink">Create an account</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registration Page -->
+        <div class="glass-container" id="registrationPage" style="display:none;">
+            <h2>Create Account</h2>
+            <form id="registrationForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="studentName"><span class="symbol">👨‍🎓</span> Student Name</label>
+                        <input type="text" id="studentName" required placeholder="John Doe">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="regUsername"><span class="symbol">👤</span> Username</label>
+                        <input type="text" id="regUsername" required placeholder="johndoe123">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="regPassword"><span class="symbol">🔒</span> Password</label>
+                        <input type="password" id="regPassword" required placeholder="Secure password">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email"><span class="symbol">✉️</span> Email</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="dob"><span class="symbol">📅</span> Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="year"><span class="symbol">📚</span> Select Year</label>
+                        <select id="year" required>
+                            <option value="" disabled selected>Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" style="grid-column: 1 / -1;">
+                        <label for="course"><span class="symbol">📚</span> Course</label>
+                        <select id="course" required>
+                            <option value="" disabled selected>Select Course</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                        </select>
+                    </div>
+                </div>
+                <p id="regError" class="error-msg">Registration Failed. Username might exist.</p>
+                <button type="submit" class="btn primary-btn" style="margin-top: 15px;">Register Now</button>
+                <div class="link-container">
+                    <span>Already have an account?</span> <a href="#" id="loginLink">Sign In</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Feedback Page -->
+        <div class="glass-container" id="feedbackPage" style="display:none; max-width: 800px;">
+            <h2>Provide Feedback</h2>
+            <p class="subtitle" id="feedbackSubtitle"></p>
+            <form id="feedbackForm">
+                <div id="teachersFeedbackContainer" class="teachers-grid">
+                    <!-- Dynamic fields will go here -->
+                </div>
+
+                <!-- Global suggestion removed; moved to per-teacher card -->
+
+                <button type="submit" class="btn primary-btn submit-feedback-btn">Submit Feedback</button>
+            </form>
+        </div>
+
+        <!-- Results Page -->
+        <div class="glass-container" id="resultsPage" style="display:none; max-width: 800px;">
+            <h2>Aggregated Results</h2>
+            <p class="subtitle" id="resultsSubtitle"></p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teacher</th>
+                            <th>Avg Rating (out of 5)</th>
+                            <th>Total Reviews</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="suggestions-display">
+                <h3>Recent Suggestions</h3>
+                <ul id="suggestionList">
+                    <!-- Dynamic suggestions -->
+                </ul>
+            </div>
+
+            <button class="btn secondary-btn" id="logoutBtn" style="margin-top:20px;">Logout</button>
+        </div>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Message</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
