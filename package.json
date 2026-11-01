@@ -1,13 +1,18 @@
 {
-  "name": "project1",
+  "name": "faculty-feedback-form",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A student faculty feedback web application using Express and MongoDB",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "echo \"No automated tests are configured yet.\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "faculty-feedback",
+    "express",
+    "mongodb"
+  ],
+  "author": "Narendar Koratla",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.6",
